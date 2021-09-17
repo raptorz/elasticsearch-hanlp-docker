@@ -1,0 +1,24 @@
+version: '3.3'
+services:
+
+  eshanlp:
+    image: raptor/eshanlp:7.10.1
+    container_name: eshanlp
+    ports:
+      - 127.0.0.1:9200:9200
+#      - 127.0.0.1:9300:9300
+    networks:
+      - eshanlp
+    volumes:
+      - /var/lib/eshanlp:/usr/share/elasticsearch/data
+      - ./elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml
+    environment:
+      - "ES_JAVA_OPTS=-Xms2g -Xmx2g"
+      - "ES_HEAP_SIZE=2048M"
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: always
+
+networks:
+  eshanlp:

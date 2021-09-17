@@ -1,0 +1,8 @@
+cluster.name: "eshanlp-cluster"
+network.host: 0.0.0.0
+cluster.max_shards_per_node: 1048576
+xpack.security.enabled: false
+#bootstrap.memory_lock: true
+node.name: "eshanlp"
+cluster.initial_master_nodes:
+        - eshanlp
