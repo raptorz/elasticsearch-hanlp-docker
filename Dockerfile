@@ -1,5 +1,5 @@
 FROM elasticsearch:7.10.1
-MAINTAINER raptor<raptor.zh@gmail.com>
+LABEL author="raptor<raptor.zh@gmail.com>"
 
 EXPOSE 9000
 
